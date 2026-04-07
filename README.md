@@ -1,32 +1,43 @@
 ## Key Features
 Page Object Model (POM)
-Improves maintainability by separating test logic from page interactions.
+I’ve used POM to keep things clean by separating test logic from page-level actions. This makes the framework easier to maintain and scale as per requirements.
 Pytest Framework
-Uses fixtures for setup/teardown and supports scalable test execution.
+Using Pytest with fixtures helps manage setup and teardown smoothly and keeps the tests structured.
 Explicit Waits (No Hardcoded Sleeps)
-Ensures stable and reliable test execution for dynamic web elements.
+No sleep() used — everything is handled with proper waits to make tests stable and reliable.
 Reusable BasePage
-Common Selenium actions (click, type, wait) are centralized.
+Common actions like click, type, wait, etc., are centralized to avoid code duplication and follow DNR.
 HTML Reporting
-Generates detailed execution reports using pytest-html.
+Test execution reports are generated using pytest-html for better visibility.
 
 ## Project Structure
 *   `pages/` - Contains page classes and element locators.
 *   `tests/` - Contains the test scripts (e.g., `test_login.py`).
-*   `conftest.py` - Global fixtures and driver configuration.
+*   `conftest.py` - Handles global fixtures , WebDriver setup and handle login.
+*   `utils/driver_factory.py` - Configuration for browser drivers.
 *   `requirements.txt` - Project dependencies.
+*   `tests` - Currently contain only two sample  testcases : 
+               TC001: Validate product search functionality for"snowboard"
+               TC002: Validate adding the first displayed product to cart after searching for "snowboard"
 
 
 
 ### Prerequisites
 *   Python 3.10+
-*   Chrome or Firefox Browser
+*   Chrome Browser
+*   Windows OS (tests are developed and verified on Windows)
+
 
 ### Installation
 1. Clone the repository:
    `git clone https://github.com`
-2. Install dependencies:
+2. Setup Virtual Environment :
+   `python -m venv venv`
+   `venv\Scripts\activate`
+3. Install dependencies:
    `pip install -r requirements.txt`
+
+
 
 ### Running Tests
 To execute all tests and generate a report, run the command below by replacing  placeholder `<password>` with  actual password:
