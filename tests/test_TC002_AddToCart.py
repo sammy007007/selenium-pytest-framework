@@ -1,3 +1,5 @@
+import time
+
 from pages.homepage import HomePage
 from pages.productpage import ProductPage
 
