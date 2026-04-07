@@ -7,10 +7,10 @@ def test_search_product(driver):
     home = HomePage(driver)
 
     home.load()
-    home.search_product("jacket")
-    actual_text =home.get_first_product()
+    home.search_product("snowboard")
+    actual_text = home.get_first_product().text
     print(actual_text)
-    assert "jacket".lower() in actual_text.lower()
+    assert "snowboard".lower() in actual_text.lower()
 
 
    

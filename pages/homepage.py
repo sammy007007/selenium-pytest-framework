@@ -3,20 +3,22 @@ from pages.basepage import BasePage
 
 class HomePage(BasePage):
 
-    URL = "https://sauce-demo.myshopify.com/"
+    URL = "https://adnabu-store-assignment1.myshopify.com/"
+    
 
     # Locators
-    search_icon = (By.ID, "search-submit")
-    search_input = (By.ID, "search-field")
-    first_product = (By.XPATH,"//a[@id='product-1']//h3")
+    search_icon = (By.XPATH, "//summary[@aria-label='Search']")
+    search_input = (By.XPATH, "//input[@id='Search-In-Modal']")
+    first_product = (By.XPATH,"//h3[@class='card__heading h5']//a")
 
 
     def load(self):
         self.open_url(self.URL)
 
     def search_product(self, product_name):
+        self.click(self.search_icon)
         self.type(self.search_input, product_name)
-        self.find(self.search_icon).submit()
+        
     
     def get_first_product(self):
         return self.get_text(self.first_product) 

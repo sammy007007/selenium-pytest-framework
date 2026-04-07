@@ -1,9 +1,18 @@
 import pytest
-
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 from driverFactory import get_driver
 
 @pytest.fixture(scope="function")
 def driver():
     driver=get_driver()
+    wait = WebDriverWait(driver, 10) 
+    driver.get("https://adnabu-store-assignment1.myshopify.com/password")
+    driver.set_page_load_timeout(5)
+    driver.find_element(By.ID,"password").send_keys("AdNabuQA"+ Keys.ENTER)
+    wait.until(EC.invisibility_of_element_located((By.ID, "password"))) 
+
     yield driver
     driver.quit()
