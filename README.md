@@ -1,9 +1,14 @@
 ## Key Features
-*   **Page Object Model (POM):** Enhances test maintenance and reduces code duplication.
-*   **Pytest Framework:** Utilizes fixtures for setup and teardown, and parameterization for data-driven testing.
-*   **Selenium WebDriver:** Reliable browser automation across Chrome and Firefox.
-*   **Custom Reporting:** Integrated with `pytest-html` for detailed execution reports.
-*   **Explicit Waits:** Intelligent synchronization to handle dynamic web elements.
+Page Object Model (POM)
+Improves maintainability by separating test logic from page interactions.
+Pytest Framework
+Uses fixtures for setup/teardown and supports scalable test execution.
+Explicit Waits (No Hardcoded Sleeps)
+Ensures stable and reliable test execution for dynamic web elements.
+Reusable BasePage
+Common Selenium actions (click, type, wait) are centralized.
+HTML Reporting
+Generates detailed execution reports using pytest-html.
 
 ## Project Structure
 *   `pages/` - Contains page classes and element locators.
@@ -24,6 +29,8 @@
    `pip install -r requirements.txt`
 
 ### Running Tests
-To execute all tests and generate a report:
+To execute all tests and generate a report, run the command below by replacing  placeholder `<password>` with  actual password:
 ```bash
-pytest --html=report.html
+pytest --password=<password>
+
+
