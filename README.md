@@ -6,7 +6,7 @@ Using Pytest with fixtures helps manage setup and teardown smoothly and keeps th
 Explicit Waits (No Hardcoded Sleeps)
 No sleep() used — everything is handled with proper waits to make tests stable and reliable.
 Reusable BasePage
-Common actions like click, type, wait, etc., are centralized to avoid code duplication and follow DNR.
+Common actions like click, type, wait, etc., are centralized to avoid code duplication and follow DYR principles.
 HTML Reporting
 Test execution reports are generated using pytest-html for better visibility.
 
@@ -17,8 +17,8 @@ Test execution reports are generated using pytest-html for better visibility.
 *   `utils/driver_factory.py` - Configuration for browser drivers.
 *   `requirements.txt` - Project dependencies.
 *   `tests` - Currently contain only two sample  testcases : 
-               TC001: Validate product search functionality for"snowboard"
-               TC002: Validate adding the first displayed product to cart after searching for "snowboard"
+      *   TC001: Validate product search functionality for"snowboard"
+      *   TC002: Validate adding the first displayed product to cart after searching for "snowboard"
 
 
 
